@@ -7,7 +7,7 @@ import {
   MotionValue,
   useInView,
 } from "framer-motion";
-import '../css/styles.css'
+import "../css/styles.css";
 import AnimText from "./AnimText";
 import React from "../icons/React";
 import NodeJS from "../icons/NodeJS";
@@ -43,20 +43,29 @@ function Slider({ id }) {
   }
   return id == 1 ? (
     <section>
-      <div className="position-relative" ref={ref}>
+      <motion.div
+        initial={{ opacity: 0.3, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4 }}
+        style={{ zIndex: 1 }}
+        className="position-relative"
+        ref={ref}
+      >
         <div className="bg p-5 rounded-3 font-archivo text-white text-center ">
           <AnimText />
         </div>
         <div className="d-flex mt-5 justify-content-center">
-
-        <button className="border-0 text-white bg col-3 py-2 mx-1 rounded-2 text-center">
-          My Skills
-        </button>
-        <button style={{height:""}} className="border-0 col-3 text-white btn btn-dark mx-1 rounded-2 text-center">
-          Portfolio
-        </button>
+          <button className="border-0 text-white bg col-3 py-2 mx-1 rounded-2 text-center">
+            My Skills
+          </button>
+          <button
+            style={{ height: "" }}
+            className="border-0 col-3 text-white btn btn-dark mx-1 rounded-2 text-center"
+          >
+            Portfolio
+          </button>
         </div>
-      </div>
+      </motion.div>
       <motion.h2
         className="text-dark ms-5"
         style={{ y }}

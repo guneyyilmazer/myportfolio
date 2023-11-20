@@ -9,6 +9,7 @@ export default function RedoAnimText({ delay }) {
     "I am the one that will fix all of your bugs...",
     "In the grand scheme of life I'm the only developer you need..!",
     "I am the one that will give life to your astonishing ideas!",
+    "I am the developer you are looking for.",
     "You can call me 'Raid' because I'm your bug killing spray..!",
   ];
 
