@@ -10,7 +10,7 @@ export default function App() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         overflow="visible"
-        viewBox="0 0 640 512"
+        viewBox="0 -50 620 512"
 
       >
         <motion.path

@@ -14,6 +14,7 @@ import NodeJS from "../icons/NodeJS";
 import NextJS from "../icons/NextJS";
 import AWS from "../icons/AWS";
 import Bootstrap from "../icons/Bootstrap";
+import chatyou from "../images/chatyou.io.png";
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
@@ -26,7 +27,6 @@ function Slider({ id }) {
   function UseInView({ children }) {
     const ref = useRef(null);
     const isInView = useInView(ref);
-    isInView && console.log("in view");
     return (
       <>
         <span
@@ -47,7 +47,6 @@ function Slider({ id }) {
         initial={{ opacity: 0.3, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.4 }}
-        style={{ zIndex: 1 }}
         className="position-relative"
         ref={ref}
       >
@@ -55,9 +54,12 @@ function Slider({ id }) {
           <AnimText />
         </div>
         <div className="d-flex mt-5 justify-content-center">
-          <button className="border-0 text-white bg col-3 py-2 mx-1 rounded-2 text-center">
+          <a
+            href="#skills"
+            className="border-0 text-decoration-none text-white bg col-3 py-2 mx-1 rounded-2 text-center"
+          >
             My Skills
-          </button>
+          </a>
           <button
             style={{ height: "" }}
             className="border-0 col-3 text-white btn btn-dark mx-1 rounded-2 text-center"
@@ -72,7 +74,7 @@ function Slider({ id }) {
       >{`#Welcome`}</motion.h2>
     </section>
   ) : id == 2 ? (
-    <section className="d-flex flex-column">
+    <section id="skills" className="d-flex flex-column">
       <UseInView className="position-absolute">
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
@@ -86,7 +88,6 @@ function Slider({ id }) {
       </UseInView>
 
       <UseInView>
-        <motion.h2 className="text-dark" style={{ y }}>{`My Skills`}</motion.h2>
         <div
           className="bg-light rounded-5 d-flex justify-content-center p-5 align-items-center"
           style={{ height: "25vh" }}
@@ -107,7 +108,32 @@ function Slider({ id }) {
             <AWS />
           </div>
         </div>
+        <motion.h2
+          className="text-dark"
+          style={{ y }}
+        >{`#My Skills`}</motion.h2>
       </UseInView>
+    </section>
+  ) : id == 3 ? (
+    <section className="d-flex flex-column">
+      <h3 className="fs-1">Portfolio</h3>
+      <div className="col-6 d-flex justify-content-between">
+        <div>
+          <img
+            className="img-fluid col-10
+          "
+            src={chatyou}
+          ></img>
+        </div>
+        <div className="col-4">
+          <h4> https://chatyou.io</h4>A Full Stack chatting application made with React,
+          React Router, Redux Toolkit, Express, Socket.io, Mongoose, MongoDB and hosted using an ubuntu EC2 instance on AWS 
+        </div>
+      </div>
+      <motion.h2
+        className="text-dark ms-5"
+        style={{ y }}
+      >{`#Projects`}</motion.h2>
     </section>
   ) : (
     ""
