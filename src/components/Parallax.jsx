@@ -11,9 +11,16 @@ import "../css/styles.css";
 import AnimText from "./AnimText";
 import React from "../icons/React";
 import NodeJS from "../icons/NodeJS";
+import TypeScript from '../icons/TypeScript'
+import HTML from "../icons/HTML";
+import MongoDB from "../icons/MongoDB";
 import NextJS from "../icons/NextJS";
+import Redux from '../icons/Redux'
+import CSS from '../icons/CSS'
+import JS from '../icons/JS'
 import AWS from "../icons/AWS";
 import Bootstrap from "../icons/Bootstrap";
+import Express from "../icons/Express";
 import chatyou from "../images/chatyou.io.png";
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -89,29 +96,54 @@ function Slider({ id }) {
 
       <UseInView>
         <div
-          className="bg-light rounded-5 d-flex justify-content-center p-5 align-items-center"
-          style={{ height: "25vh" }}
+          className="bg-light row-cols-1 rounded-5 d-flex flex-column flex-wrap justify-content-center p-5 align-items-center"
         >
-          <div style={{ height: "75px", width: "75px" }}>
-            <React></React>
+          <div className="d-flex">
+            <div style={{ height: "75px", width: "75px" }}>
+              <React />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <NodeJS />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <Bootstrap />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <NextJS />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <AWS />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <Express />
+            </div>
           </div>
-          <div className="ms-4" style={{ height: "75px", width: "75px" }}>
-            <NodeJS />
-          </div>
-          <div className="ms-4" style={{ height: "75px", width: "75px" }}>
-            <Bootstrap></Bootstrap>
-          </div>
-          <div className="ms-4" style={{ height: "75px", width: "75px" }}>
-            <NextJS></NextJS>
-          </div>
-          <div className="ms-4" style={{ height: "75px", width: "75px" }}>
-            <AWS />
+          <div className="d-flex mt-3">
+           
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <MongoDB />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <TypeScript />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <Redux />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <CSS />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <JS />
+            </div>
+            <div className="ms-1" style={{ height: "75px", width: "75px" }}>
+              <HTML />
+            </div>
           </div>
         </div>
-        <motion.h2
-          className="text-dark"
-          style={{ y }}
-        >{`#My Skills`}</motion.h2>
+          <motion.h2
+            className="text-dark"
+            style={{ y }}
+          >{`#My Skills`}</motion.h2>
       </UseInView>
     </section>
   ) : id == 3 ? (
@@ -126,8 +158,10 @@ function Slider({ id }) {
           ></img>
         </div>
         <div className="col-4">
-          <h4> https://chatyou.io</h4>A Full Stack chatting application made with React,
-          React Router, Redux Toolkit, Express, Socket.io, Mongoose, MongoDB and hosted using an ubuntu EC2 instance on AWS 
+          <h4> https://chatyou.io</h4>A Full Stack WebSocket chatting
+          application made with React, TypeScript, Bootstrap, React Router,
+          Redux Toolkit, Express, Socket.io, Mongoose, MongoDB and hosted using
+          an ubuntu EC2 instance on AWS
         </div>
       </div>
       <motion.h2
