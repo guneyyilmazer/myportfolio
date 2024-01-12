@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import '../css/some.css'
+import '../css/cursor.css'
 const cursorVariants = {
   blinking: {
     opacity: [0, 0, 1, 1],

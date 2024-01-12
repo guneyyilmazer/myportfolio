@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
-
+import CursorBlinker from "./CursorBlinker";
 
 export default function RedoAnimText({ delay }) {
   const textIndex = useMotionValue(0);
@@ -9,7 +9,7 @@ export default function RedoAnimText({ delay }) {
     "In the grand scheme of life I'm the only developer you need..!",
     "I am the one that will give life to your astonishing ideas!",
     "I am the developer you are looking for.",
-    "Your journey ends here... You have found what you came for!",
+    "Your journey ends here... You have found what you are looking for!",
     "You can call me 'Raid' because I'm your bug killing spray..!",
   ];
 
@@ -22,14 +22,14 @@ export default function RedoAnimText({ delay }) {
   const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    animate(count, 60, {
+    animate(count, 70, {
       type: "tween",
       delay: delay,
-      duration: 1.4,
+      duration: 1.8,
       ease: "easeIn",
       repeat: Infinity,
       repeatType: "reverse",
-      repeatDelay: 1.5,
+      repeatDelay: 1.2,
       onUpdate(latest) {
         if (updatedThisRound.get() === true && latest > 0) {
           updatedThisRound.set(false);
@@ -41,10 +41,17 @@ export default function RedoAnimText({ delay }) {
           }
           updatedThisRound.set(true);
         }
-      }
+      },
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <motion.span className="inline">{displayText}</motion.span>;
+  return (
+    <div>
+      <motion.span style={{ fontSize: "20px" }} className="inline cutive">
+        {displayText}
+      </motion.span>
+      <CursorBlinker />
+    </div>
+  );
 }

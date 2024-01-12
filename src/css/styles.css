@@ -1,4 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cutive&display=swap");
+body {
+	background: linear-gradient(-75deg, #efefef, #959595, #d3d3d3);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 150vh;
+}
+ 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 body {
   --black: #000000;
   --ash-black: #222;
@@ -20,6 +39,21 @@ body {
   padding: 0;
   background-color: var(--background);
   color: var(--accent);
+}
+@media (min-width: 200px) {
+  .portrait {
+    width: 300px;
+  }
+}
+@media (min-width: 1000px) {
+  .portrait {
+    width: 400px;
+  }
+}
+@media (min-width: 1600px) {
+  .portrait {
+    width: 500px;
+  }
 }
 
 .bg {
@@ -128,7 +162,12 @@ code {
 html {
   scroll-snap-type: y mandatory;
 }
-
+.bebas {
+  font-family: "Bebas Neue";
+}
+.cutive {
+  font-family: "Cutive";
+}
 h1 {
   font-size: 56px;
   font-weight: 700;
@@ -160,13 +199,6 @@ section {
 }
 
 section > div {
-  width: 500px;
-  height: 400px;
-  position: relative;
-  max-height: 90vh;
-  margin: 20px;
-  /*  background: var(--white); */
-  overflow: hidden;
 }
 
 .progress {
